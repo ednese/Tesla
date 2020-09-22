@@ -1,0 +1,42 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.nav__bar {
+  display: flex;
+  flex-direction: row;
+}
+.nav__bar__logo{
+  position: relative;
+  width: 120px;
+  bottom: 15px;
+}
+.nav__bar_center {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+.nav__bar_center li {
+  margin: 0 15px;
+}
+.nav__title__desc_underline{
+  border-bottom: 1px solid currentColor;
+  transition: all 0.3s ease-in-out;
+}
+.nav__title__desc_underline:hover{
+  border-bottom: 2px solid currentColor;
+}
+.nav__background {
+  position: absolute;
+  left: 0px;right: 0px;bottom: 0px;top: 0px;
+  width: 100vw;
+  min-width: 1130px;
+  z-index: -1;
+}
