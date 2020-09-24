@@ -3,7 +3,7 @@
     <div class="nav__bar">
       <img class="nav__bar__logo" src="../assets/tesla.svg"/>
       <ul class="nav__bar_center">
-        <li><a href="#">MODEL S</a></li>
+        <li><a href="#S">MODEL S</a></li>
         <li><a href="#">MODEL 3</a></li>
         <li><a href="#">MODEL X</a></li>
         <li><a href="#">MODEL Y</a></li>
