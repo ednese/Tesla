@@ -11,6 +11,9 @@ li {
 .nav__bar {
   display: flex;
   flex-direction: row;
+  position: fixed;
+  font-weight: 600;
+  width: 100%;
 }
 .nav__bar__logo{
   position: relative;
@@ -24,19 +27,11 @@ li {
   justify-content: center;
 }
 .nav__bar_center li {
-  margin: 0 15px;
+  margin: 0 10px;
 }
-.nav__title__desc_underline{
-  border-bottom: 1px solid currentColor;
-  transition: all 0.3s ease-in-out;
+.nav__bar_right {
+  display: flex;
 }
-.nav__title__desc_underline:hover{
-  border-bottom: 2px solid currentColor;
-}
-.nav__background {
-  position: absolute;
-  left: 0px;right: 0px;bottom: 0px;top: 0px;
-  width: 100vw;
-  min-width: 1130px;
-  z-index: -1;
+.nav__bar_right li{
+  margin: 0px 10px;
 }
