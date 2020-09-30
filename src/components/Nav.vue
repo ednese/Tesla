@@ -25,6 +25,7 @@ export default {
         <li><a href="#">MODEL Y</a></li>
         <li><a href="#">POWERWALL</a></li>
         <li><a href="#">RECHARGER</a></li>
+        <li><a href="#">PLUS</a></li>
         <li><a href="#">VÉHICULES D'OCCASION</a></li>
         <li><a href="#">REPRISE</a></li>
         <li><a href="#">CYBERTRUCK</a></li>
@@ -35,7 +36,9 @@ export default {
         <li><a href="#">NOUS TROUVER</a></li>
         <li><a href="#">ÉVÉNEMENTS</a></li>
         <li><a href="#">ASSISTANCE</a></li>
-        <li><a href="#">FRANCE</a></li>`
+        <li><a href="#">FRANCE</a></li>
+        <li><a href="#">SHOP</a></li>
+        <li><a href="#">CONNEXION</a></li>`
     }
   },
   methods: {

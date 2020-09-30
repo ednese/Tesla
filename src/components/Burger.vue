@@ -94,6 +94,8 @@ export default {
   background: rgb(196, 190, 190);
   height: 100vh;
   width: 350px;
+  display: flex;
+  flex-direction: column;
   top: 0;right: 0;margin: 0 -400px 0 0;;
 }
 .burger__sidebar.open {
@@ -110,12 +112,10 @@ export default {
 @keyframes side-close {
     100% {margin: 0 -400px 0 0;}
 }
-.burger__sidebar >>> li:first-child{
+.burger__sidebar >>> li:nth-child(8){
   margin-top: 80px;
 }
 .burger__sidebar >>> li{
-  display: flex;
-  flex-direction: row;
   margin: 40px 100px 0px 40px;
 }
 .burger__sidebar >>> li::after{
@@ -127,7 +127,37 @@ export default {
   height: 1px;
   background-color: rgb(0, 0, 0);
 }
-.burger__sidebar >>> li:nth-child(-n+6) {
+.burger__sidebar >>> li:nth-child(-n+7),
+.burger__sidebar >>> li:nth-child(n+18) {
   display: none;
+}
+@media screen and (max-width: 1200px) {
+    .burger__sidebar >>> li:nth-child(1n) {
+      display: block;
+    }
+    .burger__sidebar >>> li:nth-child(n+8) {
+      display: none;
+    }
+    .burger__sidebar >>> li:nth-child(18),
+    .burger__sidebar >>> li:nth-child(7) {
+      display: block;
+      order: 2;
+    }
+    .burger__sidebar >>> li:nth-child(19) {
+      display: block;
+      order: 1;
+    }
+    .burger__sidebar >>> li:nth-child(1){
+      margin-top: 80px;
+    }
+}
+@media screen and (max-width: 940px) {
+    .burger__sidebar >>> li:nth-child(18),
+    .burger__sidebar >>> li:nth-child(7) {
+      order: 0;
+    }
+    .burger__sidebar >>> li:nth-child(19) {
+      display: none;
+    }
 }
 </style>
