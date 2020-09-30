@@ -3,7 +3,7 @@
     <div class="burger__icon" v-on:click="toggle" v-bind:class="{active: isActive}">
       <span/>
     </div>
-    <ul class="burger__sidebar" v-bind:class="{open: isActive, close: isDisable, mobile: mobile}" v-html="nav"></ul>
+    <ul class="burger__sidebar" v-bind:class="{open: isActive, close: isDisable, more: more}" v-html="nav"></ul>
   </div>
 </template>
 
@@ -21,10 +21,7 @@ export default {
     return {
       isActive: undefined,
       isDisable: false,
-      mobile: false,
-      html: `      <li><a href="#">NOUS TROUVER</a></li>
-      <li><a href="#">ÉVÉNEMENTS</a></li>
-      <li><a href="#">ASSISTANCE</a></li>`
+      more: false
     }
   },
   methods: {
@@ -141,14 +138,19 @@ export default {
     .burger__sidebar >>> li:nth-child(18),
     .burger__sidebar >>> li:nth-child(7) {
       display: block;
+      cursor: pointer;
       order: 2;
     }
     .burger__sidebar >>> li:nth-child(19) {
       display: block;
       order: 1;
     }
-    .burger__sidebar >>> li:nth-child(1){
+    .burger__sidebar >>> li:nth-child(1) {
       margin-top: 80px;
+    }
+    .burger__sidebar >>> li>img.arrow {
+      width: 8px;
+      margin: 0px 4px;
     }
 }
 @media screen and (max-width: 940px) {

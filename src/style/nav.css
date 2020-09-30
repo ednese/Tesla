@@ -38,3 +38,12 @@ li {
 .nav__bar_center li:nth-child(n+7) {
   display: none;
 }
+@media screen and (max-width: 1200px) {
+  .nav__bar_center,
+  .nav__bar_right {
+    display: none;
+  }
+  .nav__bar {
+    justify-content: space-between;
+  }
+}
