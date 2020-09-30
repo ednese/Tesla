@@ -3,33 +3,38 @@
     <div class="burger__icon" v-on:click="toggle" v-bind:class="{active: isActive}">
       <span/>
     </div>
-    <ul class="burger__sidebar" v-bind:class="{open: isActive, close: isDisable}">
-      <li><a href="#">VÉHICULES D'OCCASION</a></li>
-      <li><a href="#">REPRISE</a></li>
-      <li><a href="#">CYBERTRUCK</a></li>
-      <li><a href="#">ROADSTER</a></li>
-      <li><a href="#">ÉNERGIE</a></li>
-      <li><a href="#">ENTREPRISES</a></li>
-      <li><a href="#">ESSAIS</a></li>
-      <li><a href="#">NOUS TROUVER</a></li>
-      <li><a href="#">ÉVÉNEMENTS</a></li>
-      <li><a href="#">ASSISTANCE</a></li>
-      <li><a href="#">FRANCE</a></li>
-    </ul>
+    <ul class="burger__sidebar" v-bind:class="{open: isActive, close: isDisable, mobile: mobile}" v-html="nav"></ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Burger',
+  props: ['nav', 'close'],
   data () {
+    document.addEventListener('scroll', () => {
+      if (this.isActive === true) {
+        this.isActive = false
+        this.isDisable = true
+      }
+    })
     return {
       isActive: undefined,
-      isDisable: false
+      isDisable: false,
+      mobile: false,
+      html: `      <li><a href="#">NOUS TROUVER</a></li>
+      <li><a href="#">ÉVÉNEMENTS</a></li>
+      <li><a href="#">ASSISTANCE</a></li>`
     }
   },
   methods: {
     toggle: function () {
+      if (window.innerWidth < 1200) {
+        this.mobile = true
+        console.log(window.innerWidth)
+      } else if (this.mobile === true) {
+        this.mobile = false
+      }
       if (this.isActive === undefined) {
         this.isActive = true
       } else {
@@ -88,31 +93,32 @@ export default {
   position: absolute;
   background: rgb(196, 190, 190);
   height: 100vh;
+  width: 350px;
   top: 0;right: 0;margin: 0 -400px 0 0;;
 }
 .burger__sidebar.open {
   top: 0;right: 0;margin: 0 -400px 0 0;
-  animation: side-open 1s forwards;
+  animation: side-open .5s forwards;
 }
 @keyframes side-open {
     100% {margin: 0 0px 0 0;}
 }
 .burger__sidebar.close {
   top: 0;right: 0;margin: 0 0px 0 0;
-  animation: side-close 1s forwards;
+  animation: side-close .5s forwards;
 }
 @keyframes side-close {
     100% {margin: 0 -400px 0 0;}
 }
-.burger__sidebar li:first-child{
+.burger__sidebar >>> li:first-child{
   margin-top: 80px;
 }
-.burger__sidebar li{
+.burger__sidebar >>> li{
   display: flex;
   flex-direction: row;
   margin: 40px 100px 0px 40px;
 }
-.burger__sidebar li::after{
+.burger__sidebar >>> li::after{
   content: '';
   position: absolute;
   width: 80%;
@@ -120,5 +126,8 @@ export default {
   margin-top: 40px;
   height: 1px;
   background-color: rgb(0, 0, 0);
+}
+.burger__sidebar >>> li:nth-child(-n+6) {
+  display: none;
 }
 </style>

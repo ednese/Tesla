@@ -35,3 +35,6 @@ li {
 .nav__bar_right li{
   margin: 0px 10px;
 }
+.nav__bar_center li:nth-child(n+7) {
+  display: none;
+}
