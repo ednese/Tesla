@@ -132,8 +132,15 @@ export default {
   height: 1px;
   background-color: rgb(0, 0, 0);
 }
+.burger__sidebar >>> li:nth-child(18),
+.burger__sidebar >>> li:nth-child(19) {
+  order:2;
+}
+
 .burger__sidebar >>> li:nth-child(-n+7),
-.burger__sidebar >>> li:nth-child(n+18) {
+.burger__sidebar >>> li:nth-child(n+21),
+.burger__sidebar >>> li:nth-child(18),
+.burger__sidebar >>> li:nth-child(19) {
   display: none;
 }
 @media screen and (max-width: 1200px) {
