@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="Models">
       <div class="Model3"/>
       <div class="ModelS"/>
       <div class="ModelX"/>
@@ -30,12 +30,15 @@ export default {
 </script>
 
 <style scoped>
-.Model3,
-.ModelS,
-.ModelX,
-.ModelY,
-.SolarPanels,
-.Accessories {
+.Models {
+  max-height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.Models div {
+  scroll-snap-align: start;
+}
+.Model3, .ModelS, .ModelX, .ModelY, .SolarPanels, .Accessories {
     width: 100%;
     height: 100vh;
     background-size: cover;
