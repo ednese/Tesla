@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <Nav/>
-    <!-- <ModelY/> -->
+    <Models/>
     <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
 import Nav from '@/components/Nav'
-import ModelY from '@/components/ModelY'
+import Models from '@/components/Models'
 
 export default {
   name: 'App',
-  components: { Nav, ModelY }
+  components: { Nav, Models }
 }
 </script>
 

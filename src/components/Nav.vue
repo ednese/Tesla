@@ -19,6 +19,7 @@
 <script>
 import Burger from '@/components/Burger'
 
+import '@/style/nav.css'
 export default {
   name: 'Nav',
   components: { Burger },
@@ -31,9 +32,7 @@ export default {
         obj.type = 'link'
       } else {
         obj.type = 'img'
-        obj.type = 'img'
         obj.class = 'arrow'
-        console.log(true)
       }
       return obj
     })
