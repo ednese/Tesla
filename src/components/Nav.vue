@@ -1,12 +1,18 @@
 <template>
   <div class="nav__bar">
     <img class="nav__bar__logo" src="../assets/tesla.svg"/>
-    <ul class="nav__bar_center" v-html="nav"></ul>
+    <ul class="nav__bar_center">
+      <li v-for="element in elements" :key="element.name">
+        <a href="#" v-on:click="add">
+          {{ element.name }}
+        </a>
+      </li>
+    </ul>
     <ul class="nav__bar_right">
       <li><a href="#">SHOP</a></li>
       <li><a href="#">CONNEXION</a></li>
     </ul>
-    <Burger v-bind:nav="nav"/>
+    <Burger v-bind:more="more" v-bind:elements="elements"/>
   </div>
 </template>
 
@@ -17,34 +23,99 @@ export default {
   name: 'Nav',
   components: { Burger },
   data () {
-    const arrow = 'data:image/png;base64,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'
     return {
-      nav: `
-        <li><a href="#S">MODEL S</a></li>
-        <li><a href="#">MODEL X</a></li>
-        <li><a href="#">MODEL 3</a></li>
-        <li><a href="#">MODEL Y</a></li>
-        <li><a href="#">POWERWALL</a></li>
-        <li><a href="#">RECHARGER</a></li>
-        <li>PLUS<img class="arrow" v-on:click="toggle"src="${arrow}"/></li>
-        <li><a href="#">VÉHICULES D'OCCASION</a></li>
-        <li><a href="#">REPRISE</a></li>
-        <li><a href="#">CYBERTRUCK</a></li>
-        <li><a href="#">ROADSTER</a></li>
-        <li><a href="#">ÉNERGIE</a></li>
-        <li><a href="#">ENTREPRISES</a></li>
-        <li><a href="#">ESSAIS</a></li>
-        <li><a href="#">NOUS TROUVER</a></li>
-        <li><a href="#">ÉVÉNEMENTS</a></li>
-        <li><a href="#">ASSISTANCE</a></li>
-        <li><a href="#">FRANCE</a></li>
-        <li><a href="#">SHOP</a></li>
-        <li><a href="#">CONNEXION</a></li>`
+      more: false,
+      elements: [{
+        name: 'MODEL S',
+        type: 'link'
+      },
+      {
+        name: 'MODEL X',
+        type: 'link'
+      },
+      {
+        name: 'MODEL 3',
+        type: 'link'
+      },
+      {
+        name: 'MODEL Y',
+        type: 'link'
+      },
+      {
+        name: 'POWERWALL',
+        type: 'link'
+      },
+      {
+        name: 'RECHARGER',
+        type: 'link'
+      },
+      {
+        name: 'PLUS',
+        type: 'img',
+        img: {
+          class: 'arrow',
+          clickEvent: () => {
+            this.more = !this.more
+          }
+        }
+      },
+      {
+        name: "VÉHICULES D'OCCASION",
+        type: 'link'
+      },
+      {
+        name: 'REPRISE',
+        type: 'link'
+      },
+      {
+        name: 'CYBERTRUCK',
+        type: 'link'
+      },
+      {
+        name: 'ROADSTER',
+        type: 'link'
+      },
+      {
+        name: 'ÉNERGIE',
+        type: 'link'
+      },
+      {
+        name: 'ENTREPRISES',
+        type: 'link'
+      },
+      {
+        name: 'ESSAIS',
+        type: 'link'
+      },
+      {
+        name: 'NOUS TROUVER',
+        type: 'link'
+      },
+      {
+        name: 'ÉVÉNEMENTS',
+        type: 'link'
+      },
+      {
+        name: 'ASSISTANCE',
+        type: 'link'
+      },
+      {
+        name: 'SHOP',
+        type: 'link'
+      },
+      {
+        name: 'CONNEXION',
+        type: 'link'
+      },
+      {
+        name: 'FRANCE',
+        type: 'link'
+      }
+      ]
     }
   },
   methods: {
     add: function () {
-      this.count++
     }
   }
 }

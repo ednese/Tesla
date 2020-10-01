@@ -3,14 +3,24 @@
     <div class="burger__icon" v-on:click="toggle" v-bind:class="{active: isActive}">
       <span/>
     </div>
-    <ul class="burger__sidebar" v-bind:class="{open: isActive, close: isDisable, more: more}" v-html="nav"></ul>
+    <ul class="burger__sidebar" v-bind:class="{open: isActive, close: isDisable, more: more}">
+      <li v-bind:class="{more: more}" v-for="element in elements" :key="element.name">
+        <a v-if="element.type !== 'img'" v-bind:href="element.name">
+          {{ element.name }}
+        </a>
+        <a v-else-if="element.type === 'img'" href="#" v-on:click="element.img.clickEvent">
+          {{ element.name }}
+          <img v-bind:class="element.img.class" src="@/assets/arrow.png"/>
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Burger',
-  props: ['nav', 'close'],
+  props: ['elements', 'more'],
   data () {
     document.addEventListener('scroll', () => {
       if (this.isActive === true) {
@@ -20,15 +30,13 @@ export default {
     })
     return {
       isActive: undefined,
-      isDisable: false,
-      more: false
+      isDisable: false
     }
   },
   methods: {
     toggle: function () {
       if (window.innerWidth < 1200) {
         this.mobile = true
-        console.log(window.innerWidth)
       } else if (this.mobile === true) {
         this.mobile = false
       }
@@ -138,7 +146,6 @@ export default {
     .burger__sidebar >>> li:nth-child(18),
     .burger__sidebar >>> li:nth-child(7) {
       display: block;
-      cursor: pointer;
       order: 2;
     }
     .burger__sidebar >>> li:nth-child(19) {
@@ -148,10 +155,42 @@ export default {
     .burger__sidebar >>> li:nth-child(1) {
       margin-top: 80px;
     }
-    .burger__sidebar >>> li>img.arrow {
+    .burger__sidebar >>> li>a>img.arrow {
       width: 8px;
-      margin: 0px 4px;
+      transform: rotate(0deg);
     }
+    .burger__sidebar.more >>> li>a>img.arrow {
+      transform: rotate(90deg);
+      width: 10px;
+    }
+    .burger__sidebar.more >>> li:nth-child(-n+6) {
+      display: none;
+    }
+    .burger__sidebar.more >>> li:nth-child(n+7) {
+      display: block;
+      order: 1;
+    }
+    .burger__sidebar.more >>> li:nth-child(8) {
+      margin-top: 40px;
+    }
+    .burger__sidebar.more >>> li:nth-child(7) {
+      margin-top: 80px;
+      font-weight: 700;
+    }
+    /* .burger__sidebar.more >>> li:nth-child(19),
+    .burger__sidebar.more >>> li:nth-child(20) {
+      order: 1;
+    } */
+    /* .burger__sidebar.more >>> li:nth-child(n+7) {
+      display: block;
+    }
+    .burger__sidebar.more >>> li:nth-child(8) {
+      margin-top: 40px;
+    }
+    .burger__sidebar.more >>> li:nth-child(7) {
+      margin-top: 80px;
+      font-weight: 700;
+    } */
 }
 @media screen and (max-width: 940px) {
     .burger__sidebar >>> li:nth-child(18),
@@ -160,6 +199,23 @@ export default {
     }
     .burger__sidebar >>> li:nth-child(19) {
       display: none;
+    }
+    .burger__sidebar.more >>> li>a>img.arrow {
+      transform: rotate(90deg);
+      width: 10px;
+    }
+    .burger__sidebar.more >>> li:nth-child(-n+6) {
+      display: none;
+    }
+    .burger__sidebar.more >>> li:nth-child(n+7) {
+      display: block;
+    }
+    .burger__sidebar.more >>> li:nth-child(8) {
+      margin-top: 40px;
+    }
+    .burger__sidebar.more >>> li:nth-child(7) {
+      margin-top: 80px;
+      font-weight: 700;
     }
 }
 </style>
