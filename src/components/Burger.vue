@@ -8,9 +8,9 @@
         <a v-if="element.type !== 'img'" v-bind:href="element.name">
           {{ element.name }}
         </a>
-        <a v-else-if="element.type === 'img'" href="#" v-on:click="element.img.clickEvent">
+        <a v-else-if="element.type === 'img'" href="#" v-on:click="moreEvent">
           {{ element.name }}
-          <img v-bind:class="element.img.class" src="@/assets/arrow.png"/>
+          <img v-bind:class="element.class" src="@/assets/arrow.png"/>
         </a>
       </li>
     </ul>
@@ -20,7 +20,7 @@
 <script>
 export default {
   name: 'Burger',
-  props: ['elements', 'more'],
+  props: ['elements'],
   data () {
     document.addEventListener('scroll', () => {
       if (this.isActive === true) {
@@ -30,22 +30,24 @@ export default {
     })
     return {
       isActive: undefined,
-      isDisable: false
+      isDisable: false,
+      more: false
     }
   },
   methods: {
     toggle: function () {
-      if (window.innerWidth < 1200) {
-        this.mobile = true
-      } else if (this.mobile === true) {
-        this.mobile = false
-      }
       if (this.isActive === undefined) {
         this.isActive = true
       } else {
         this.isActive = !this.isActive
         this.isDisable = !this.isDisable
       }
+      if (this.isActive === false) {
+        this.more = false
+      }
+    },
+    moreEvent: function () {
+      this.more = !this.more
     }
   }
 }
@@ -132,10 +134,6 @@ export default {
   height: 1px;
   background-color: rgb(0, 0, 0);
 }
-.burger__sidebar >>> li:nth-child(18),
-.burger__sidebar >>> li:nth-child(19) {
-  order:2;
-}
 
 .burger__sidebar >>> li:nth-child(-n+7),
 .burger__sidebar >>> li:nth-child(n+21),
@@ -150,14 +148,14 @@ export default {
     .burger__sidebar >>> li:nth-child(n+8) {
       display: none;
     }
-    .burger__sidebar >>> li:nth-child(18),
-    .burger__sidebar >>> li:nth-child(7) {
+    .burger__sidebar >>> li:nth-child(7),
+    .burger__sidebar >>> li:nth-child(20) {
+      display: block;
+      order: 3;
+    }
+    .burger__sidebar >>> li:nth-child(18) {
       display: block;
       order: 2;
-    }
-    .burger__sidebar >>> li:nth-child(19) {
-      display: block;
-      order: 1;
     }
     .burger__sidebar >>> li:nth-child(1) {
       margin-top: 80px;
@@ -177,45 +175,8 @@ export default {
       display: block;
       order: 1;
     }
-    .burger__sidebar.more >>> li:nth-child(8) {
-      margin-top: 40px;
-    }
-    .burger__sidebar.more >>> li:nth-child(7) {
-      margin-top: 80px;
-      font-weight: 700;
-    }
-    /* .burger__sidebar.more >>> li:nth-child(19),
-    .burger__sidebar.more >>> li:nth-child(20) {
-      order: 1;
-    } */
-    /* .burger__sidebar.more >>> li:nth-child(n+7) {
-      display: block;
-    }
-    .burger__sidebar.more >>> li:nth-child(8) {
-      margin-top: 40px;
-    }
-    .burger__sidebar.more >>> li:nth-child(7) {
-      margin-top: 80px;
-      font-weight: 700;
-    } */
-}
-@media screen and (max-width: 940px) {
-    .burger__sidebar >>> li:nth-child(18),
-    .burger__sidebar >>> li:nth-child(7) {
-      order: 0;
-    }
-    .burger__sidebar >>> li:nth-child(19) {
+    .burger__sidebar.more >>> li:nth-child(18) {
       display: none;
-    }
-    .burger__sidebar.more >>> li>a>img.arrow {
-      transform: rotate(90deg);
-      width: 10px;
-    }
-    .burger__sidebar.more >>> li:nth-child(-n+6) {
-      display: none;
-    }
-    .burger__sidebar.more >>> li:nth-child(n+7) {
-      display: block;
     }
     .burger__sidebar.more >>> li:nth-child(8) {
       margin-top: 40px;

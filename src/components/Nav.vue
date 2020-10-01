@@ -52,12 +52,7 @@ export default {
       {
         name: 'PLUS',
         type: 'img',
-        img: {
-          class: 'arrow',
-          clickEvent: () => {
-            this.more = !this.more
-          }
-        }
+        class: 'arrow'
       },
       {
         name: "VÉHICULES D'OCCASION",
