@@ -20,6 +20,7 @@
 import Footer from '@/components/Footer'
 
 import '@/style/models.css'
+import '@/style/models-responsive.css'
 
 export default {
   name: 'Models',

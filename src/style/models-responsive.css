@@ -1,0 +1,54 @@
+@media screen and (max-width: 1000px) {
+    .Models__title {
+        text-align: center;
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .Model3 {
+        background-image: url("../img/mobile_model_3_v2.jpg");
+    }
+    .ModelS {
+        background-image: url("../img/Mobile-ModelS.jpg");
+    }
+    .ModelX {
+        background-image: url("../img/Mobile-ModelX.jpg");
+    }
+    .ModelY {
+        background-image: url("../img/Mobile-ModelY.jpg");
+    }
+    .SolarPanels {
+        background-image: url("../img/Mobile-SolarPanels.jpg");
+    }
+    .Accessories {
+        background-image: url("../img/Mobile-Accessories.jpg");
+    }
+    .Models .inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Models .inputs button {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .Models__title {
+        font-size: 25px;
+    }
+    h2.Models__subtitle {
+        font-size: 14px;
+    }
+    .Models__subtitle {
+        font-size: 10px;
+    }
+    .Models button {
+        width: 80vw;
+    }
+    .Models__input_infos {
+        top: 250px;
+    }
+}

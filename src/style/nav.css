@@ -15,6 +15,7 @@ li {
   position: fixed;
   font-weight: 600;
   width: 100%;
+  z-index: 1;
 }
 .nav__bar__logo{
   position: relative;
@@ -33,7 +34,7 @@ li {
   margin: 0 10px;
 }
 .nav__bar_right {
-  z-index: 1;
+  /* z-index: 1; */
   display: flex;
 }
 .nav__bar_right li{

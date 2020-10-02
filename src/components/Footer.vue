@@ -26,5 +26,17 @@ export default {
 }
 .footer > ul > li {
     margin: 0 10px;
+    cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+    .footer > ul {
+        margin: 0;
+        top: 370px;
+        flex-direction: column;
+    }
+    .footer > ul > li {
+        text-align: center;
+        max-width: 80%;
+    }
 }
 </style>
