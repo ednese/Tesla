@@ -26,7 +26,7 @@ li {
   width: 100%;
   flex-direction: row;
   position: relative;
-  left: 60px;
+  left: 40px;
   justify-content: center;
 }
 .nav__bar_center li {
