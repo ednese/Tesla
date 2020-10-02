@@ -25,10 +25,10 @@ export default {
   components: { Burger },
   data () {
     const tab = ['MODEL S', 'MODEL X', 'MODEL 3', 'MODEL Y', 'POWERWALL', 'RECHARGER', 'PLUS', "VÉHICULES D'OCCASION", 'REPRISE', 'CYBERTRUCK', 'ROADSTER', 'ÉNERGIE', 'ENTREPRISES', 'ESSAIS', 'NOUS TROUVER', 'ÉVÉNEMENTS', 'ASSISTANCE', 'SHOP', 'CONNEXION', 'FRANCE']
-    const parse = (tab) => tab.map(tab => {
+    const parse = tab => tab.map(item => {
       const obj = {}
-      obj.name = tab
-      if (tab !== 'PLUS') {
+      obj.name = item
+      if (item !== 'PLUS') {
         obj.type = 'link'
       } else {
         obj.type = 'img'

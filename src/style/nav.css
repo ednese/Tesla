@@ -7,6 +7,7 @@ ul {
 }
 li {
   list-style: none;
+  font-size: smaller;
 }
 .nav__bar {
   display: flex;
@@ -25,13 +26,14 @@ li {
   width: 100%;
   flex-direction: row;
   position: relative;
-  left: 70px;
+  left: 60px;
   justify-content: center;
 }
 .nav__bar_center li {
   margin: 0 10px;
 }
 .nav__bar_right {
+  z-index: 1;
   display: flex;
 }
 .nav__bar_right li{

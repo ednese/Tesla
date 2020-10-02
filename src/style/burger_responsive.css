@@ -1,8 +1,4 @@
 @media screen and (max-width: 1200px) {
-    .burger__sidebar li {
-      margin-top: 50px;
-      font-size: smaller;
-    }
     .burger__sidebar li:nth-child(1n) {
       display: block;
     }
