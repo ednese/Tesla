@@ -12,6 +12,8 @@
         <button v-else-if="item.class === 'infos'" class="Models__input_infos">EN SAVOIR PLUS</button>
         <button v-else class="Models__input_buy">COMMANDER MAINTENANT</button>
         <div v-if="item.class === 'buy'"><Footer/></div>
+        <p v-if="item.type === 'Model3'" class="Models__grade">A reçu la note maximale de 5 étoiles par Euro NCAP</p>
+        <img v-if="item.type === 'Model3'" class="Models__grade_img" src="@/assets/arrow_small.png"/>
       </div>
     </div>
 </template>
