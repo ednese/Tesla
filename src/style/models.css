@@ -13,15 +13,27 @@
   .Models__title,
   .Models__subtitle {
     position: relative;
-    bottom:270px;
+    bottom:230px;
+    color: rgba(0, 0, 0, 0);
     margin: 0;
   }
   .Models__title {
     font-size: 40px;
     font-weight: 600;
+    animation: top-open 1s forwards;
+    animation-delay: 1s;
   }
   .Models__subtitle {
+    bottom:270px;
     font-size: 14px;
+    animation: top-open .5s forwards;
+    animation-delay: 2s;
+  }
+  @keyframes top-open {
+    100% {
+        bottom:270px;
+        color: rgba(0, 0, 0, 0.8);
+    }
   }
   h2.Models__subtitle {
     font-weight: 500;
@@ -36,8 +48,12 @@
     display: flex;
     position: absolute;
     width: 100%;
-    background-color: rgb(0, 0, 0);
-    animation: mouse-over .5s forwards;
+    background-color: rgb(0, 0, 0, 0);
+    animation: fade .5s forwards;
+    animation-delay: 2s;
+  }
+  @keyframes fade {
+    100% {background-color: rgb(0, 0, 0);}
   }
   .Models>div>a::after{
     height: 1px;
@@ -60,14 +76,33 @@
     height: 40px;
     width: 320px;
   }
+  .Models__input_black,
+  .Models__input_white {
+    color: rgba(255, 255, 255, 0);
+    margin: 0 50px;
+    background: rgba(0, 0, 0, 0);
+  }
   .Models__input_black {
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
+    animation: side-left .5s forwards;
+    animation-delay: 2s;
+  }
+  @keyframes side-left {
+    100% {
+        color: white;
+        background: rgba(0, 0, 0, 0.7);
+        margin: 0 10px;
+    }
   }
   .Models__input_white {
-    width: 250px;
-    color: black;
-    background: rgba(255, 255, 255, 0.7);
+    animation: side-right .5s forwards;
+    animation-delay: 2s;
+  }
+  @keyframes side-right {
+    100% {
+        color: rgb(0, 0, 0);
+        background: rgba(255, 255, 255, 0.7);
+        margin: 0 10px;
+    }
   }
   .Models__input_infos {
     top: 350px;
