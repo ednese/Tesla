@@ -49,6 +49,11 @@ export default {
       if (this.isActive === false) {
         this.more = false
       }
+      if (this.isActive && !this.isDisable) {
+        this.$emit('clicked', true)
+      } else {
+        this.$emit('clicked', false)
+      }
     },
     moreEvent: function () {
       this.more = !this.more

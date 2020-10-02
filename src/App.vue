@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Nav/>
-    <Models/>
+    <Nav @clicked="onClickChild"/>
+    <Models v-bind:fadein="fadein"/>
     <!-- <router-view/> -->
   </div>
 </template>
@@ -12,7 +12,17 @@ import Models from '@/components/Models'
 
 export default {
   name: 'App',
-  components: { Nav, Models }
+  data () {
+    return {
+      fadein: false
+    }
+  },
+  components: { Nav, Models },
+  methods: {
+    onClickChild (value) {
+      this.fadein = value
+    }
+  }
 }
 </script>
 

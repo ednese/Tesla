@@ -25,6 +25,7 @@ import '@/style/models-responsive.css'
 export default {
   name: 'Models',
   components: { Footer },
+  props: ['fadein'],
   data () {
     const title = [{title: 'Model 3', type: 'Model3'}, {title: 'Model S', type: 'ModelS'}, {title: 'Model X', type: 'ModelX'}, {title: 'Model Y', type: 'ModelY'}, {title: "Systèmes d'énergie solaire et Powerwalls", type: 'SolarPanels'}, {title: 'Accessoires', type: 'Accessories'}]
     const parse = tab => tab.map((item, index) => {
@@ -44,7 +45,6 @@ export default {
     })
     return {
       bold: false,
-      fadein: false,
       items: parse(title),
       opacity: 1
     }

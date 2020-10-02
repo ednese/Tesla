@@ -12,7 +12,7 @@
       <li><a href="#">SHOP</a></li>
       <li><a href="#">CONNEXION</a></li>
     </ul>
-    <Burger v-bind:elements="elements"/>
+    <Burger @clicked="onClickChild" v-bind:elements="elements"/>
   </div>
 </template>
 
@@ -39,6 +39,11 @@ export default {
     })
     return {
       elements: parse(tab)
+    }
+  },
+  methods: {
+    onClickChild (value) {
+      this.$emit('clicked', value)
     }
   }
 }
