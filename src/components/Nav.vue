@@ -20,6 +20,7 @@
 import Burger from '@/components/Burger'
 
 import '@/style/nav.css'
+
 export default {
   name: 'Nav',
   components: { Burger },

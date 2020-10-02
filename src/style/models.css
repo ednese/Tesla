@@ -1,0 +1,113 @@
+.Models {
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  .Models > div {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Models__title,
+  .Models__subtitle {
+    position: relative;
+    bottom:270px;
+    margin: 0;
+  }
+  .Models__title {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .Models__subtitle {
+    font-size: 14px;
+  }
+  h2.Models__subtitle {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .Models>div>a{
+    cursor: pointer;
+  }
+  .Models>div>a::after,
+  .Models>div>a.bold::after{
+    content: '';
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    animation: mouse-over .5s forwards;
+  }
+  .Models>div>a::after{
+    height: 1px;
+  }
+  .Models>div>a.bold::after{
+    height: 2px;
+  }
+  .Models__input_black,
+  .Models__input_white,
+  .Models__input_infos,
+  .Models__input_buy {
+    position: relative;
+    top: 290px;
+    cursor: pointer;
+    border: none;
+    font-family: Montserrat;
+    font-weight: 500;
+    border-radius: 50px;
+    margin: 0 10px;
+    height: 40px;
+    width: 320px;
+  }
+  .Models__input_black {
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .Models__input_white {
+    width: 250px;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  .Models__input_infos {
+    top: 350px;
+    width: 250px;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .Models__input_buy {
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0);
+  }
+  .Model3, .ModelS, .ModelX, .ModelY, .SolarPanels, .Accessories {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-color: black;
+  }
+  .Model3 {
+      background-image: url("../img/desktop_model_3_v2.jpg");
+  }
+  .ModelS {
+      background-image: url("../img/Desktop-ModelS.jpg");
+  }
+  .ModelX {
+      background-image: url("../img/Desktop-ModelX.jpg");
+  }
+  .ModelY {
+      background-image: url("../img/Desktop-ModelY.jpg");
+  }
+  .SolarPanels {
+      background-image: url("../img/Desktop-SolarPanels.jpg");
+  }
+  .Accessories {
+      background-image: url("../img/Desktop-Accessories.jpg");
+  }
+  .fadein {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    opacity: .3;
+    background: black;
+  }
