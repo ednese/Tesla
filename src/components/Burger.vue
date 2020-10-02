@@ -25,13 +25,6 @@ export default {
   name: 'Burger',
   props: ['elements'],
   data () {
-    document.addEventListener('scroll', () => {
-      if (this.isActive === true && window.scrollY > 1) {
-        this.isActive = false
-        this.isDisable = true
-        this.more = false
-      }
-    })
     return {
       isActive: undefined,
       isDisable: false,

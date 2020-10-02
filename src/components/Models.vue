@@ -52,7 +52,6 @@ export default {
   methods: {
     hover: function () {
       this.bold = !this.bold
-      console.log('true')
     }
   }
 }
