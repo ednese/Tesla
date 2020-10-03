@@ -63,28 +63,37 @@
     .Models__input_infos {
         top: 250px;
     }
+    .Models__grade{
+        width: 80%;
+    }
     .Models__grade,
     .Models__grade_img{
-        top: 300px;
+        top: 270px;
     }
+    @keyframes top-fade {
+        100% {
+            opacity: 1;
+            top: 270px;
+        }
+      }
     @keyframes Arrow-loop {
         from {
-          top: 300px;
+          top: 270px;
         }
         10% {
-          top: 305px;
+          top: 275px;
         }
         20% {
-          top: 300px;
+          top: 270px;
         }
         30% {
-          top: 305px;
+          top: 275px;
         }
         40% {
-          top: 300px;
+          top: 270px;
         }
         to {
-          top: 300px;
+          top: 270px;
         }
       }
 }

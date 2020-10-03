@@ -13,7 +13,7 @@
   .Models__title,
   .Models__subtitle {
     position: relative;
-    bottom:230px;
+    bottom:200px;
     color: rgba(0, 0, 0, 0);
     margin: 0;
   }
@@ -24,14 +24,14 @@
     animation-delay: 1s;
   }
   .Models__subtitle {
-    bottom:270px;
+    bottom:230px;
     font-size: 14px;
     animation: top-open .5s forwards;
     animation-delay: 2s;
   }
   @keyframes top-open {
     100% {
-        bottom:270px;
+        bottom:230px;
         color: rgba(0, 0, 0, 0.8);
     }
   }
@@ -118,17 +118,28 @@
   .Models__grade,
   .Models__grade_img{
     position: relative;
-    top: 350px;
+    top: 340px;
   }
   .Models__grade {
     color: black;
     font-size: 14px;
     text-align: center;
+    opacity: 0;
+    animation: top-fade .5s forwards;
+    animation-delay: 2.5s;
+  }
+  @keyframes top-fade {
+    100% {
+      opacity: 1;
+        top: 350px;
+    }
   }
   .Models__grade_img{
     transform: rotate(-90deg);
+    top: 350px;
     width: 25px;
     animation: Arrow-loop infinite 2s linear;
+    animation-delay: 3s;
   }
   @keyframes Arrow-loop {
     from {
