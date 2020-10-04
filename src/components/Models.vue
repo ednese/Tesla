@@ -2,7 +2,7 @@
     <div class="Models">
       <div v-if="fadein" class="fadein"/>
       <div v-for="item in items" :key="item.name" v-bind:class="item.type">
-        <h1 class="Models__title" v-bind:style="{opacity: opacity}">{{item.title}}</h1>
+        <h1 class="Models__title" :style="{opacity: opacity}">{{item.title}}</h1>
         <a v-if="item.class === 'inputs'" @mouseover="hover" @mouseout="hover" v-bind:class="{bold:bold}" class="Models__subtitle">Contacter un Store</a>
         <h2 v-else-if="item.type === 'SolarPanels'" class="Models__subtitle">{{item.subtitle}}</h2>
         <div v-if="item.class === 'inputs'" class="inputs">
