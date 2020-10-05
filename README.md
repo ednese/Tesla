@@ -1,8 +1,10 @@
 # First page of tesla site with Vue.js: [View the Website here](https://ednese.github.io/teslavue/)
 
+## ![Preview](@/img/Screenshot_tesla.png)
+
 > A Vue.js project
 
-> The goal of this project is to rebuild tesla site to familiarize myself with vuejs.
+The goal of this project is to rebuild tesla site to familiarize myself with vuejs.
 
 ## Build Setup
 
