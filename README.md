@@ -1,4 +1,4 @@
-# First page of tesla with Vue.js [View the Website here](ednese.github.io/teslavue/)
+# First page of tesla site with Vue.js: [View the Website here](https://ednese.github.io/teslavue/)
 
 > A Vue.js project
 
