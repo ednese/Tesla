@@ -1,6 +1,6 @@
 # First page of tesla site with Vue.js: [View the Website here](https://ednese.github.io/teslavue/)
 
-## ![Preview](https://ibb.co/8KTJCN9)
+## ![](src/img/Screenshot_tesla.png)
 
 > A Vue.js project
 
